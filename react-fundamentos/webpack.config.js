@@ -13,7 +13,18 @@ module.exports = {
       template: path.resolve(__dirname, 'public', 'index.html'),
     }),
     new CleanWebpackPlugin(),
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        // aqui adiciona uma exceção dos arquivos que o babel loader nao vai executar
+        // nesse caso, adiciona uma exceção no folder node_modules
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      }
+    ]
+  }
 };
 
 // entry - onde iniciar, normalmente o arquivo que contem ReactDOM.render
