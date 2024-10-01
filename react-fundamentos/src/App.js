@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Post from './Post';
+import Header from './Header';
 
 const category = 'Posts da semana';
 const title = 'Título da notícia';
@@ -8,6 +9,11 @@ const title = 'Título da notícia';
 export default function App() {
   return (
     <>
+      <Header title="Learning React">
+        {/* Aqui pode ser passado o que quiser exibir la no children */}
+        <h2>Sending body to component...</h2>
+      </Header>
+
       {/* added id 'idTitle' to tag */}
       <h1 id="idTitle">JStack`s Blog {console.log('Log dentro do JSX')}</h1>
       <h2>{category}</h2>
