@@ -13,6 +13,7 @@ export default function Header(props) {
   return (
     <>
       <h1>
+        {/* {props.title || 'Learning React'} */}
         {props.title}
       </h1>
 
@@ -24,6 +25,10 @@ export default function Header(props) {
 // .node é para passar um conteudo (node)
 // title - required / children - optional
 Header.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   children: PropTypes.node,
+}
+
+Header.defaultProps = {
+  title: 'Learning React'
 }

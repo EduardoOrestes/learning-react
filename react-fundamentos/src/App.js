@@ -9,7 +9,7 @@ const title = 'Título da notícia';
 export default function App() {
   return (
     <>
-      <Header title="Learning React">
+      <Header title="Learning REACT">
         {/* Aqui pode ser passado o que quiser exibir la no children */}
         <h2>Sending body to component...</h2>
       </Header>
