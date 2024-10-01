@@ -34,6 +34,7 @@ export default function App() {
       */}
 
       <Post
+        likes={20}
         post={{
           title: `${title} 01`,
           subtitle: "Subtitulo da noticia 01"
@@ -41,6 +42,7 @@ export default function App() {
       />
 
       <Post
+        likes={11}
         post={{
           title: `${title} 02`,
           subtitle: "Subtitulo da noticia 02"
@@ -48,6 +50,7 @@ export default function App() {
       />
 
       <Post
+        likes={16}
         post={{
           title: `${title} 03`,
           subtitle: "Subtitulo da noticia 03"
