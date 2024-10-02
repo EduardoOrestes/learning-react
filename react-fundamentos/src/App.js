@@ -6,6 +6,12 @@ import Header from './Header';
 const category = 'Posts da semana';
 const title = 'Título da notícia';
 
+const posts = [
+  { title: 'Title#01', subtitle: 'Sub#01', likes: 20 },
+  { title: 'Title#02', subtitle: 'Sub#02', likes: 10 },
+  { title: 'Title#03', subtitle: 'Sub#03', likes: 16 },
+]
+
 export default function App() {
   return (
     <>
@@ -31,7 +37,9 @@ export default function App() {
       />
 
       No post receberia a props e seria acessada - { props.title }
-      */}
+
+
+      outra opcao
 
       <Post
         likes={20}
@@ -40,22 +48,20 @@ export default function App() {
           subtitle: "Subtitulo da noticia 01"
         }}
       />
+      */}
 
-      <Post
-        likes={11}
-        post={{
-          title: `${title} 02`,
-          subtitle: "Subtitulo da noticia 02"
-        }}
-      />
-
-      <Post
-        likes={16}
-        post={{
-          title: `${title} 03`,
-          subtitle: "Subtitulo da noticia 03"
-        }}
-      />
+      {/* usando map */}
+      {/* sempre que for usado o MAP, ele deve ter a propriedade key do react (é como se fosse o ID) */}
+      {posts.map(post => (
+        <Post
+          key={post.title}
+          likes={post.likes}
+          post={{
+            title: post.title,
+            subtitle: post.subtitle,
+          }}
+        />
+      ))}
     </>
   )
 }
