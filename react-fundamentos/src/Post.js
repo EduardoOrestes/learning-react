@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function Post(props) {
-  console.log(props);
+  // console.log(props);
 
   return (
     <>
