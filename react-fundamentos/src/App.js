@@ -65,8 +65,7 @@ export default function App() {
       No post receberia a props e seria acessada - { props.title }
 
 
-      outra opcao
-
+      outra opcao:
       <Post
         likes={20}
         post={{

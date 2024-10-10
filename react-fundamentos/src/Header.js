@@ -29,6 +29,8 @@ Header.propTypes = {
   children: PropTypes.node,
 }
 
+
+// quando nao passar o title, vai pegar o defaultProps
 Header.defaultProps = {
   title: 'Learning React'
 }
