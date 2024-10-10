@@ -1,3 +1,9 @@
+// proxima - funcoes de callback via props
+
+
+
+
+
 import React, { useState } from 'react';
 
 import Post from './Post';
