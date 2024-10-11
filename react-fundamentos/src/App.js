@@ -1,9 +1,3 @@
-// proxima - funcoes de callback via props
-
-
-
-
-
 import React, { useState } from 'react';
 
 import Post from './Post';
@@ -40,6 +34,12 @@ export default function App() {
         },
       ]);
     }, 2000);
+  }
+
+  function handleRemovePost(postId) {
+    setPosts((prevState) => (
+      prevState.filter(post => post.id !== postId)
+    ))
   }
 
   return (
@@ -87,7 +87,9 @@ export default function App() {
         <Post
           key={post.id}
           likes={post.likes}
+          onRemove={handleRemovePost}
           post={{
+            id: post.id,
             title: post.title,
             subtitle: post.subtitle,
           }}
