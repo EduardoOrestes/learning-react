@@ -9,9 +9,9 @@ const category = 'Posts da semana';
 export default function App() {
   // [posts, setPosts] - vai desestruturizar
   const [posts, setPosts] = useState([
-    { id: Math.random(), title: 'Title#01', subtitle: 'Sub#01', likes: 20 },
-    { id: Math.random(), title: 'Title#02', subtitle: 'Sub#02', likes: 10 },
-    { id: Math.random(), title: 'Title#03', subtitle: 'Sub#03', likes: 16 },
+    { id: Math.random(), title: 'Title#01', subtitle: 'Sub#01', likes: 20, read: false },
+    { id: Math.random(), title: 'Title#02', subtitle: 'Sub#02', likes: 10, read: true },
+    { id: Math.random(), title: 'Title#03', subtitle: 'Sub#03', likes: 16, read: false },
   ]);
 
   function handleRefresh() {
@@ -86,13 +86,8 @@ export default function App() {
       {posts.map(post => (
         <Post
           key={post.id}
-          likes={post.likes}
           onRemove={handleRemovePost}
-          post={{
-            id: post.id,
-            title: post.title,
-            subtitle: post.subtitle,
-          }}
+          post={post}
         />
       ))}
     </>
