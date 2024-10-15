@@ -2,6 +2,7 @@ import React from 'react';
 
 // usado para tipar as props
 import PropTypes from 'prop-types';
+import PostHeader from './PostHeader';
 
 export default function Post(props) {
   // console.log(props);
@@ -15,11 +16,15 @@ export default function Post(props) {
       {props.post.read
         ? <h2>{props.post.title} já foi lido.</h2>
         : <article>
-            <strong>
-              {/* {props.post.read ? <s>{props.post.title}</s> : props.post.title} */}
-              { props.post.title}
-            </strong>
-            <button onClick={() => props.onRemove(props.post.id)}>Remover</button><br />
+            <PostHeader
+              onRemove={props.onRemove}
+              post = {{
+                id: props.post.id,
+                title: props.post.title,
+                read: props.post.read,
+              }}
+            />
+            <br />
             <small>{ props.post.subtitle }</small><br />
 
             Media: {props.post.likes / 2}

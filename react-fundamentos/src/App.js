@@ -1,7 +1,11 @@
+// Próxima - Inline Styles
+
+
 import React, { useState } from 'react';
 
 import Post from './Post';
 import Header from './Header';
+import { ThemeProvider } from './ThemeContext';
 
 const category = 'Posts da semana';
 // const title = 'Título da notícia';
@@ -31,6 +35,7 @@ export default function App() {
           title: `Title#0${prevState.length + 1}`,
           subtitle: `Sub#0${prevState.length + 1}`,
           likes: 50,
+          read: false,
         },
       ]);
     }, 2000);
@@ -43,7 +48,9 @@ export default function App() {
   }
 
   return (
-    <>
+    // É necessário envolver tudo que vai usar o ThemeContext, para ele ficar disponivel (Context API)
+    // o value passado, é o que vai ficar disponivel para acessar nos outros componentes
+    <ThemeProvider>
       <Header title="Learning REACT">
         {/* Aqui pode ser passado o que quiser exibir la no children */}
         <h2>Sending body to component...</h2>
@@ -90,7 +97,7 @@ export default function App() {
           post={post}
         />
       ))}
-    </>
+    </ThemeProvider>
   )
 }
 
