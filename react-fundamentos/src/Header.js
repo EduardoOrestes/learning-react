@@ -20,7 +20,8 @@ export default function Header(props) {
     <div
       style={{
         background: '#ccc',
-        fontFamily: 'sans-serif'
+        fontFamily: 'sans-serif',
+        marginBottom: 24
       }}
     >
       <h1>
