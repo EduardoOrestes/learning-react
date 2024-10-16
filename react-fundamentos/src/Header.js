@@ -17,7 +17,12 @@ export default function Header(props) {
   const { onToggleTheme } = useContext(ThemeContext);
 
   return (
-    <>
+    <div
+      style={{
+        background: '#ccc',
+        fontFamily: 'sans-serif'
+      }}
+    >
       <h1>
         {/* {props.title || 'Learning React'} */}
         {props.title}
@@ -28,7 +33,7 @@ export default function Header(props) {
       </Button>
 
       {props.children}
-    </>
+    </div>
   )
 }
 
