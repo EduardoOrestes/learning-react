@@ -24,8 +24,18 @@ module.exports = {
         exclude: /node_modules/,
         use: 'babel-loader',
       }, {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              // o css modules - ajuda a não ter conflito de classes CSS,
+              // ele gera uma HASH para cada classe, assim as classes nunca se repetirão
+              modules: true
+            }
+          }
+        ]
       }
     ]
   },

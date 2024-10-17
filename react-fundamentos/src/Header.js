@@ -4,6 +4,9 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
 
+// esse import é nomeado porque o css modules está sendo usado
+import * as styles from './Header.module.css';
+
 // Context API
 // tem que desestruturar {} porque foi um export nomeado
 import { ThemeContext } from './ThemeContext';
@@ -14,7 +17,6 @@ import { ThemeContext } from './ThemeContext';
 
 // export default function Header(props) {
 // ai pega o valor {props.title}
-
 export default function Header(props) {
   const { onToggleTheme } = useContext(ThemeContext);
 
@@ -26,7 +28,9 @@ export default function Header(props) {
         marginBottom: 24
       }}
     >
-      <h1>
+      <h1
+        className={styles.title}
+      >
         {/* {props.title || 'Learning React'} */}
         {props.title}
       </h1>
