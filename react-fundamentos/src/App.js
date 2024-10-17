@@ -7,6 +7,8 @@ import Post from './Post';
 import Header from './Header';
 import { ThemeProvider } from './ThemeContext';
 
+import * as styles from './App.module.css';
+
 const category = 'Posts da semana';
 // const title = 'Título da notícia';
 
@@ -58,7 +60,9 @@ export default function App() {
 
       {/* added id 'idTitle' to tag */}
       <h1 id="idTitle">JStack`s Blog {console.log('Log dentro do JSX')}</h1>
-      <h2>
+      <h2
+        className={styles.title}
+      >
         {category}
         <button onClick={handleRefresh}>Atualizar</button>
       </h2>
