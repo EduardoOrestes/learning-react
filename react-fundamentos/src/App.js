@@ -15,9 +15,10 @@ const category = 'Posts da semana';
 export default function App() {
   // [posts, setPosts] - vai desestruturizar
   const [posts, setPosts] = useState([
-    { id: Math.random(), title: 'Title#01', subtitle: 'Sub#01', likes: 20, read: false },
-    { id: Math.random(), title: 'Title#02', subtitle: 'Sub#02', likes: 10, read: true },
-    { id: Math.random(), title: 'Title#03', subtitle: 'Sub#03', likes: 16, read: false },
+    { id: Math.random(), title: 'Title#01', subtitle: 'Sub#01', likes: 20, read: false, removed: false },
+    { id: Math.random(), title: 'Title#02', subtitle: 'Sub#02', likes: 10, read: true, removed: false },
+    { id: Math.random(), title: 'Title#03', subtitle: 'Sub#03', likes: 16, read: false, removed: false },
+    { id: Math.random(), title: 'Title#04', subtitle: 'Sub#04', likes: 12, read: false, removed: false },
   ]);
 
   function handleRefresh() {
@@ -43,10 +44,21 @@ export default function App() {
     }, 2000);
   }
 
+  // Foi alterado
+  // function handleRemovePost(postId) {
+  //   setPosts((prevState) => (
+  //     prevState.filter(post => post.id !== postId)
+  //   ))
+  // }
+
   function handleRemovePost(postId) {
-    setPosts((prevState) => (
-      prevState.filter(post => post.id !== postId)
-    ))
+    setPosts((prevState) => prevState.map(
+      post => (
+        post.id === postId
+          ? { ...post, removed: true }
+          : post
+      )
+    ));
   }
 
   return (

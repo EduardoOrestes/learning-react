@@ -1,6 +1,6 @@
 // START - yarn dev
 
-// Proxima SASS e SASS Modules
+// Proxima Introdução ao Styled Components
 
 import React from "react";
 import ReactDOM from 'react-dom';

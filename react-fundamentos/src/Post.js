@@ -3,6 +3,7 @@ import React from 'react';
 // usado para tipar as props
 import PropTypes from 'prop-types';
 import PostHeader from './PostHeader';
+import * as styles from './Post.scss';
 
 export default function Post(props) {
   // console.log(props);
@@ -15,7 +16,13 @@ export default function Post(props) {
     <>
       {props.post.read
         ? <h2>{props.post.title} já foi lido.</h2>
-        : <article>
+        : <article
+            className={
+              props.post.removed
+                ? styles.postDeleted
+                : styles.post
+            }
+          >
             <PostHeader
               onRemove={props.onRemove}
               post = {{
@@ -30,7 +37,6 @@ export default function Post(props) {
             Media: {props.post.likes / 2}
           </article>
       }
-      <br />
     </>
   )
 }
@@ -44,6 +50,7 @@ Post.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     likes: PropTypes.number.isRequired,
-    read: PropTypes.bool.isRequired
+    read: PropTypes.bool.isRequired,
+    removed: PropTypes.bool.isRequired
   }).isRequired,
 }
