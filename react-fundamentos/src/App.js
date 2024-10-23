@@ -7,7 +7,7 @@ import Post from './Post';
 import Header from './Header';
 import { ThemeProvider } from './ThemeContext';
 
-import * as styles from './App.module.css';
+import * as styles from './App.module.scss';
 
 const category = 'Posts da semana';
 // const title = 'Título da notícia';

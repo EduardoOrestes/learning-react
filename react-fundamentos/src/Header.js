@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 // esse import é nomeado porque o css modules está sendo usado
-import * as styles from './Header.module.css';
+import * as styles from './Header.module.scss';
 
 // Context API
 // tem que desestruturar {} porque foi um export nomeado

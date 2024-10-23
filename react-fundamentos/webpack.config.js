@@ -24,6 +24,7 @@ module.exports = {
         exclude: /node_modules/,
         use: 'babel-loader',
       }, {
+        // test: /\.scss$/i, e remover o 'test: css' se fosse usar so o sass
         test: /\.css$/i,
         use: [
           'style-loader',
@@ -35,6 +36,21 @@ module.exports = {
               modules: true
             }
           }
+          // 'sass-loader' -> se fosse usar so o sass
+        ]
+      }, {
+        test: /\.scss$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              // o css modules - ajuda a não ter conflito de classes CSS,
+              // ele gera uma HASH para cada classe, assim as classes nunca se repetirão
+              modules: true
+            },
+          },
+          'sass-loader',
         ]
       }
     ]
