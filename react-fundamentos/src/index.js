@@ -5,11 +5,17 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import GlobalStyle from './styles/global'
 
-import './index.scss';
+// importa por default o arquivo index, caso contrario deve colocar o nome do arquivo
+import App from './components/App';
+
+// import './index.scss'; OLD
 
 ReactDOM.render(
-  <App />,
+  <>
+    <GlobalStyle />
+    <App />
+  </>,
   document.getElementById('root')
 );
