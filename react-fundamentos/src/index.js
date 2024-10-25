@@ -1,6 +1,6 @@
 // START - yarn dev
 
-// Proxima Introdução ao Styled Components
+// Proxima Estilizando Components com styled
 
 import React from "react";
 import ReactDOM from 'react-dom';

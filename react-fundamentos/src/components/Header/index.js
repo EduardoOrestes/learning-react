@@ -2,14 +2,20 @@
 
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button';
+import styled from 'styled-components';
 
+import Button from '../Button';
 // esse import é nomeado porque o css modules está sendo usado
-import * as styles from './Header.module.scss';
+// import * as styles from './Header.module.scss'; OLD
 
 // Context API
 // tem que desestruturar {} porque foi um export nomeado
 import { ThemeContext } from '../../context/ThemeContext';
+
+// Criado usando o Styled Components
+const Title = styled.h1`
+  color: #637bf3;
+`;
 
 // usando {} para desestruturar a props enviada onde chama esse componente
 
@@ -28,12 +34,10 @@ export default function Header(props) {
         marginBottom: 24
       }}
     >
-      <h1
-        className={styles.title}
-      >
+      <Title>
         {/* {props.title || 'Learning React'} */}
         {props.title}
-      </h1>
+      </Title>
 
       <Button onClick={onToggleTheme}>
         Mudar tema
